@@ -1,5 +1,8 @@
 def main():
     import math as m
+    def findy():
+        h = float(input('Enter a second number: '))
+        return(h)
     yes = True
     x = float(input('Enter a number: '))
     z = 0
@@ -13,44 +16,44 @@ def main():
             print('+ = addition\n- = subtraction\n* or x = multiplication\n/ = division')
             print('% = modulus (find the remainder between two numbers)\n^ = exponent (x to the power of y)\nq = exponent roots(the y root of x)')
             print('sin = sin(sine)\ncos = cos(cosine)\ntan = tan(tangent)\nasin = inverse sin\nacos = inverse cos\natan = inverse tan')
-            print('log = logarithm\nAll trig functions are calculated in degrees')
+            print('log = logarithm\nAll trig functions are calculated in degrees\nThe key for the natural log is 0')
         elif o == '+':
-            y = float(input('Enter a second number: '))
+            y = findy()
             a = x
             x = x + y
             print(f'The sum of {a} and {y} is {x}')
             z += 1
         elif o == '-':
-            y = float(input('Enter a second number: '))
+            y = findy()
             a = x
             x = x - y
             print(f'The difference between {a} and {y} is {x}')
             z += 1
         elif o == '*' or o == 'x':
-            y = float(input('Enter a second number: '))
+            y = findy()
             a = x
             x = x*y
             print(f'The product of {a} and {y} is {x}')
             z += 1
         elif o == '/':
-            y = float(input('Enter a second number: '))
+            y = findy()
             a = x
             x = x/y
             print(f'The quotient of {a} and {y} is {x}')
             z += 1
         elif o == '%':
-            y = float(input('Enter a second number: '))
+            y = findy()
             a = x
             x = x%y
             print(f'The remainder of {a} and {y} is {x}')
         elif o == '^':
-            y = float(input('Enter a second number: '))
+            y = findy()
             a = x
             x = x**y
             print(f'{a}^{y} is equal to {x}')
             z += 1
         elif o == 'q':
-            y = float(input('Enter a second number: '))
+            y = findy()
             b = y
             y = 1/y
             a = x
@@ -93,8 +96,8 @@ def main():
             print(f'The inverse tan of {a} is {x}')
             z += 1
         elif o == 'log':
-            y = float(input('Enter a second number (type 0 or 1 for natural log): '))
-            if y == 0 or y == 1:
+            y = findy()
+            if y == 0:
                 a = x
                 x = m.log(x, m.e)
                 print(f'The natural log of {a} is {x}')
@@ -110,10 +113,6 @@ def main():
             print('Error, operator not recognized.')
     print(f'The final number is {x}')
     print(f'A total of {z} operations were performed.')
-    
-
-
-
 
     return
 
