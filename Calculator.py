@@ -50,11 +50,15 @@ def main():
             ends.append('*')
         elif o == '/':
             y = findy()
-            a = x
-            x = x/y
-            print(f'The quotient of {a} and {y} is {x}')
-            z += 1
-            ends.append('/')
+            if y == 0:
+                print('No.')
+                yes = False
+            else:
+                a = x
+                x = x/y
+                print(f'The quotient of {a} and {y} is {x}.')
+                z += 1
+                ends.append('/')
         elif o == '%':
             y = findy()
             a = x
