@@ -3,6 +3,14 @@ def main():
     def findy():
         h = float(input('Enter a second number: '))
         return(h)
+    class Addition:
+        def __init__ (self, numx, numy):
+            self.x = numx
+            self.y = numy
+        def getx(self):
+            return self.x
+        def gety(self):
+            return self.y
     yes = True
     x = float(input('Enter a number: '))
     z = 0
@@ -21,7 +29,8 @@ def main():
         elif o == '+':
             y = findy()
             a = x
-            x = x + y
+            x = Addition(x, y)
+            x = x.getx() + x.gety()
             print(f'The sum of {a} and {y} is {x}')
             z += 1
             ends.append('+')
@@ -130,7 +139,7 @@ def main():
     fin = ' '.join(ends)
     print(f'The final number is {x}')
     print(f'A total of {z} operations were performed.')
-    print(f'A collected list of all the operations performed is as follows:\n{fin}.')
+    print(f'A collected list of all the operations performed is as follows:\n{fin}')
 
     return
 
